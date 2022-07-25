@@ -2,7 +2,7 @@
 
 For all Pokémon fans ✨
 
-This app provides you a cool view of Pokémon cards that you can scroll through. 🍄
+This app provides you a cool view of 10 Pokémon cards that you can scroll through. 🍄
 
 Every card contains information about the pokémon's type, level and hit points. ⚡️
 
