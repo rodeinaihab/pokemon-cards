@@ -6,9 +6,9 @@ This app provides you a cool view of 10 Pokémon cards that you can scroll throu
 
 Every card contains information about the pokémon's type, level and hit points. ⚡️
 
-You can search for Pokémon names through the search bar and reset your search by clicking on the Pokémon ball. 🔮
+You can search for Pokémon names through the search bar by clicking on the search icon and reset your search by clicking on the Pokémon ball. 🔮
 
-You can also filter the pokémons by their type and sort them by their hit points. 🚀
+You can also filter the pokémons by their types and sort the hit points in an ascending and descending order. 🚀
 
 ### Node
 
