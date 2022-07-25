@@ -6,19 +6,19 @@
 You should be able to run the following command after the installation procedure
 below.
 
-## Install
+## 1. Install
 
     $ git clone https://github.com/ORG/PROJECT.git
     $ cd PROJECT
     $ npm install
 
-## Run Backend before you run Frontend
+## 2. Run Backend (before Frontend)
 
     $ cd PROJECT/backend
     $ npm install
     $ npm start
 
-## Run Frontend
+## 3. Run Frontend
 
     $ cd PROJECT/frontend
     $ npm install
