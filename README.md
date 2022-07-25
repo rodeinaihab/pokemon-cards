@@ -10,6 +10,8 @@ You can search for Pokémon names through the search bar by clicking on the sear
 
 You can also filter the pokémons by their types and sort the hit points in an ascending and descending order. 🚀
 
+For the data, I have used this public API (https://pokemontcg.io).
+
 ### Node
 
 [Node](http://nodejs.org/) is really easy to install & now include [NPM](https://npmjs.org/).
