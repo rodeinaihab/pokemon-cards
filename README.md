@@ -1,4 +1,9 @@
-# pokemon-cards
+# Pokémon Cards App
+
+For all Pokémon fans ✨
+this app provides you a cool view of Pokémon cards that you can scroll through. 
+Every card contains information about the pokémon's type, level and hit points.
+You can search for Pokémon names through the search bar and reset your search by clicking on the Pokémon ball. You can also filter the pokémons by their type and sort them by their hit points. 
 
 ### Node
 
