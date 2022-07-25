@@ -1,0 +1,38 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.search-bar{
+  color: cornsilk;
+}
+
+.text-input {
+  color: white;
+}
+.error-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
