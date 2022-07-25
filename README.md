@@ -45,4 +45,14 @@ Also, be sure to have `git` available in your PATH, `npm` might need it.
     $ cd PROJECT
     $ npm install
 
- 
+## Run Backend
+
+    $ cd PROJECT/backend
+    $ npm install
+    $ npm start
+
+## Run Frontend
+
+    $ cd PROJECT/frontend
+    $ npm install
+    $ npm start
