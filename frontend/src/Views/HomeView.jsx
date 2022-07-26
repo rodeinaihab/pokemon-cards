@@ -20,11 +20,12 @@ const HomeView = () => {
   const [allCards, setAllCards] = useState();
   const [searchQuery, setSearchQuery] = useState("");
   const [types, setTypes] = useState([]);
-  const [order, setOrder] =  useState("ascending");
+  const [order, setOrder] =  useState("descending");
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const open = Boolean(anchorEl);
+
 
   const options = [
     'ascending',
