@@ -2,15 +2,16 @@ const fetch = require("node-fetch");
 
 const getCards = async(req, res) => {
     try {
-        let url = "https://api.pokemontcg.io/v2/cards?pageSize=10&q=";
+        let url = "https://api.pokemontcg.io/v2/cards?pageSize=10";
+
+        if (req.query.order) {
+            const order = req.query.order;
+            url = `${url}&orderBy=${order=="ascending" ? "-number" : "number"}`;
+        }
 
         if (req.query.name) {
             const name = req.query.name;
-            url = `${url}name:${name}`;
-        }
-
-        if (req.query.sort) {
-            const sort = req.query.sort;
+            url = `${url}&q=name:${name}`;
         }
 
         if (req.query.types) {
@@ -18,10 +19,11 @@ const getCards = async(req, res) => {
             if (types.length > 0) {
                 types = types.map((type) => `types:${type}`)
                 const typesString = types.join(" OR ")
-                url = `${url}(${typesString})`;
+                url = `${url} (${typesString})`;
             }
-
         }
+
+        console.log(url);
 
 
         const result = await fetch(url, {method: "GET"});
