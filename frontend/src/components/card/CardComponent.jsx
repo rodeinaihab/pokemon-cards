@@ -25,6 +25,9 @@ const CardComponent = (props) => {
                           Type: {props.card.types}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
+                          Number: {props.card.number}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
                           Level: {props.card.level ? props.card.level : "Unknown"}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">

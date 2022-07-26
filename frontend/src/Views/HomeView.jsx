@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CardComponent from "../components/card/CardComponent";
-import { getCards } from "../services/getAllCards";
+import { getCards } from "../services/getCards";
 import { AppBar, IconButton, TextField, Typography } from "@material-ui/core";
 import SearchIcon from '@mui/icons-material/Search';
 import pokeBall from "../assets/ball.png";
@@ -11,15 +11,35 @@ import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Menu from '@mui/material/Menu';
 
 
 const HomeView = () => {
   const [allCards, setAllCards] = useState();
   const [searchQuery, setSearchQuery] = useState("");
-  const [types, setTypes] = React.useState([]);
+  const [types, setTypes] = useState([]);
+  const [order, setOrder] =  useState("ascending");
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(1);
+  const open = Boolean(anchorEl);
 
-    const defaultTypes = [
+  const options = [
+    'ascending',
+    'descending',
+  ];
+
+  const handleClickListItem = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+  const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+  const defaultTypes = [
         "Colorless",
         "Darkness",
         "Dragon",
@@ -32,10 +52,9 @@ const HomeView = () => {
         "Psychic",
         "Water"
     ];
-
-    const ITEM_HEIGHT = 48;
-    const ITEM_PADDING_TOP = 8;
-    const MenuProps = {
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
         PaperProps: {
             style: {
                 maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
@@ -43,8 +62,7 @@ const HomeView = () => {
             },
         },
     };
-
-    const handleTypeChange = (event) => {
+  const handleTypeChange = (event) => {
         const {
             target: { value },
         } = event;
@@ -56,9 +74,22 @@ const HomeView = () => {
 
 
   const fetchData = async () => {
-    const data = await getCards(searchQuery, types);
+    const data = await getCards(searchQuery, types, order);
     setAllCards(data.data);
   };
+
+    const handleMenuItemClick = (event, index) => {
+        setSelectedIndex(index);
+        setOrder(options[index]);
+        setAnchorEl(null);
+        fetchData();
+    };
+
+  const imageClick = () => {
+        setSearchQuery("");
+        setTypes([]);
+        fetchData();
+  }
 
   useEffect(() => {
     fetchData();
@@ -69,7 +100,9 @@ const HomeView = () => {
         <AppBar position="static" color="primary.main">
             <div className="bar-container">
                 <div className="title-container">
-                    <img src={ pokeBall } alt="Welcome to Pokémon App" style={{width: "35px",height: "35px", marginRight: "20px"}}/>
+                    <img src={ pokeBall } alt="Welcome to Pokémon App"
+                         style={{width: "35px",height: "35px", marginRight: "20px"}}
+                         onClick={() => imageClick()}/>
                     <Typography variant="h4" component="h6" color="textPrimary">
                         Pokémon Cards
                     </Typography>
@@ -86,6 +119,48 @@ const HomeView = () => {
                     <IconButton onClick={() => fetchData()}>
                         <SearchIcon />
                     </IconButton>
+                </div>
+                <div>
+                    <List
+                        component="nav"
+                        aria-label="Device settings"
+                        sx={{ bgcolor: 'background.paper' }}
+                    >
+                        <ListItem
+                            button
+                            id="lock-button"
+                            aria-haspopup="listbox"
+                            aria-controls="lock-menu"
+                            aria-label="Sort by Hit Points"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClickListItem}
+                        >
+                            <ListItemText
+                                primary="Sort by Hit Points"
+                                secondary={options[selectedIndex]}
+                            />
+                        </ListItem>
+                    </List>
+                    <Menu
+                        id="lock-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'lock-button',
+                            role: 'listbox',
+                        }}
+                    >
+                        {options.map((option, index) => (
+                            <MenuItem
+                                key={option}
+                                selected={index === selectedIndex}
+                                onClick={(event) => handleMenuItemClick(event, index)}
+                            >
+                                {option}
+                            </MenuItem>
+                        ))}
+                    </Menu>
                 </div>
                 <div>
                     <FormControl sx={{ m: 1, width: 300 }}>
@@ -112,9 +187,6 @@ const HomeView = () => {
                 </div>
             </div>
         </AppBar>
-      <div>
-
-      </div>
       {allCards ? (
         <div className="card-container">
           {
