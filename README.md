@@ -35,3 +35,6 @@ below.
     $ cd pokemon-cards/frontend
     $ npm install
     $ npm start
+    
+    Hint: If resolving React dependencies throws error, try to handle with: 
+    $ npm install --force
