@@ -21,7 +21,7 @@ below.
 ## 1. Install
 
     $ git clone https://github.com/rodeinaihab/pokemon-cards.git
-    $ cd PROJECT
+    $ cd pokemon-cards
     $ npm install
 
 ## 2. Run Backend (before Frontend)
