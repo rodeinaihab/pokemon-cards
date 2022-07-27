@@ -12,7 +12,7 @@ You can also filter the pokémons by their types and sort their number in an asc
 
 For the data, I have used this public API (https://pokemontcg.io).
 
-About the features: 
+🧩 About the features: 
 
 🧩 Search for pokémons: please click on the search icon to see the results
 
