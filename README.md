@@ -20,7 +20,7 @@ below.
 
 ## 1. Install
 
-    $ git clone https://github.com/rodeinaihab/pokemon-cards
+    $ git clone https://github.com/rodeinaihab/pokemon-cards.git
     $ cd PROJECT
     $ npm install
 
