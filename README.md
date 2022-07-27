@@ -20,18 +20,18 @@ below.
 
 ## 1. Install
 
-    $ git clone https://github.com/ORG/PROJECT.git
+    $ git clone https://github.com/rodeinaihab/pokemon-cards
     $ cd PROJECT
     $ npm install
 
 ## 2. Run Backend (before Frontend)
 
-    $ cd PROJECT/backend
+    $ cd pokemon-cards/backend
     $ npm install
     $ npm start
 
 ## 3. Run Frontend
 
-    $ cd PROJECT/frontend
+    $ cd pokemon-cards/frontend
     $ npm install
     $ npm start
