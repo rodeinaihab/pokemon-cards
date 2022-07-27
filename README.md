@@ -36,5 +36,5 @@ below.
     $ npm install
     $ npm start
     
-    Hint: If resolving React dependencies throws error, try to handle with: 
+    Hint: If resolving React dependencies throws an error, try to handle with: 
     $ npm install --force
