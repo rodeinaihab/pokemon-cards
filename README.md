@@ -4,13 +4,21 @@ For all Pokémon fans ✨
 
 This app provides you a cool view of 10 Pokémon cards that you can scroll through. 🍄
 
-Every card contains information about the pokémon's type, level and hit points. ⚡️
+Every card contains information about the pokémon's type, level and number. ⚡️
 
 You can search for Pokémon names through the search bar by clicking on the search icon and reset your search by clicking on the Pokémon ball. 🔮
 
-You can also filter the pokémons by their types and sort the hit points in an ascending and descending order. 🚀
+You can also filter the pokémons by their types and sort their number in an ascending and descending order. 🚀
 
 For the data, I have used this public API (https://pokemontcg.io).
+
+About the features: 
+
+🧩 Search for pokémons: please click on the search icon to see the results
+
+🧩 Sort by types: When you are finished with selecting types, please close the dropdown by clicking on the home bar.
+
+
 
 ### Node
 
