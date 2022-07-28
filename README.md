@@ -52,6 +52,8 @@ below.
     $ npm install
     $ npm start
     
+    Agree to open the app in another port.
+    
     Hint: If resolving React dependencies throws an error, try to handle with: 
     $ npm install --force
     
