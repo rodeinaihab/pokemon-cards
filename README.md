@@ -28,7 +28,7 @@ You should be able to run the following command after the installation procedure
 below.
 
 
-## 1. Install through the Terminal
+## Step 1. Install through the Terminal
 
     $ git clone https://github.com/rodeinaihab/pokemon-cards.git
     $ cd pokemon-cards
@@ -38,7 +38,7 @@ below.
     go to Step 2. If Step 2 worked: "Server is running on port 3000!", the errors of Step 1 can be ignored. 
     If not please re-check the Node installation. 
 
-## 2. Run Backend (before Frontend)
+## Step 2. Run Backend (before Frontend Step 3)
 
     $ cd pokemon-cards/backend
     $ npm install
@@ -46,7 +46,7 @@ below.
     
     Hint: "Server is running on port 3000!" will appear if the backend is running
 
-## 3. Run Frontend
+## Step 3. Run Frontend in another Terminal Window
 
     $ cd pokemon-cards/frontend
     $ npm install
