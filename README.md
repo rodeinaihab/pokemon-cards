@@ -35,7 +35,8 @@ below.
     $ npm install
     
     Hint: If there are dependencies related errors after running npm install in the project directory,
-    go to Step 2. If Step 2 worked: "Server is running on port 3000!", the errors of Step 1 can be ignored. If not please re-check the Node installation. 
+    go to Step 2. If Step 2 worked: "Server is running on port 3000!", the errors of Step 1 can be ignored. 
+    If not please re-check the Node installation. 
 
 ## 2. Run Backend (before Frontend)
 
