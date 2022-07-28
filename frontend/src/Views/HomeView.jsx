@@ -82,7 +82,6 @@ const HomeView = () => {
         setSelectedIndex(index);
         setOrder(options[index]);
         setAnchorEl(null);
-        //fetchData();
     };
 
   const imageClick = () => {
