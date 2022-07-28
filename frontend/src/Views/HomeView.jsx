@@ -20,12 +20,11 @@ const HomeView = () => {
   const [allCards, setAllCards] = useState();
   const [searchQuery, setSearchQuery] = useState("");
   const [types, setTypes] = useState([]);
-  const [order, setOrder] =  useState("descending");
+  const [order, setOrder] =  useState("ascending");
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const open = Boolean(anchorEl);
-
 
   const options = [
     'ascending',
@@ -79,11 +78,11 @@ const HomeView = () => {
     setAllCards(data.data);
   };
 
-    const handleMenuItemClick = (event, index) => {
+  const handleMenuItemClick = (event, index) => {
         setSelectedIndex(index);
         setOrder(options[index]);
         setAnchorEl(null);
-        fetchData();
+        //fetchData();
     };
 
   const imageClick = () => {
@@ -94,7 +93,7 @@ const HomeView = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [order]);
 
   return (
     <div className="home">
@@ -132,12 +131,12 @@ const HomeView = () => {
                             id="lock-button"
                             aria-haspopup="listbox"
                             aria-controls="lock-menu"
-                            aria-label="Sort by Hit Points"
-                            aria-expanded={open ? 'true' : undefined}
+                            aria-label="Sort by Number"
+                            aria-expanded={open ? 'true' : 'false'}
                             onClick={handleClickListItem}
                         >
                             <ListItemText
-                                primary="Sort by Hit Points"
+                                primary="Sort by Number"
                                 secondary={options[selectedIndex]}
                             />
                         </ListItem>

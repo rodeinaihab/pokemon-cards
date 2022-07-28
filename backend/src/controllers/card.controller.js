@@ -6,7 +6,13 @@ const getCards = async(req, res) => {
 
         if (req.query.order) {
             const order = req.query.order;
-            url = `${url}&orderBy=${order=="ascending" ? "-number" : "number"}`;
+            url = `${url}&orderBy=${order=="ascending" ? "number" : "-number"}`;
+        }
+
+        url = `${url}&q=`;
+        if (req.query.name) {
+            const name = req.query.name;
+            url = `${url}name:${name}`;
         }
 
         if (req.query.name) {
