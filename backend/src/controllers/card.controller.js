@@ -29,11 +29,8 @@ const getCards = async(req, res) => {
             }
         }
 
-        console.log(url);
-
-
+        //console.log(url);
         const result = await fetch(url, {method: "GET"});
-
 
         res.header("Access-Control-Allow-Origin", "*");
         res.send (await result.json());
