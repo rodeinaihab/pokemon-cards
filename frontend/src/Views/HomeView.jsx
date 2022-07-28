@@ -132,7 +132,7 @@ const HomeView = () => {
                             aria-haspopup="listbox"
                             aria-controls="lock-menu"
                             aria-label="Sort by Number"
-                            aria-expanded={open ? 'true' : 'false'}
+                            aria-expanded={open ? 'true' : undefined}
                             onClick={handleClickListItem}
                         >
                             <ListItemText
